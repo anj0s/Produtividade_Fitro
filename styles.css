@@ -105,9 +105,16 @@ header {
   text-align: center;
 }
 
-#logo {
-  color: #fff;
-  font-weight: 100;
+header div{
+  font-size: 18px;
+  font-weight:bolder;
+  color: whitesmoke;
+  align-items: center;
+  vertical-align: middle;
+}
+
+header div img{
+  vertical-align: middle;
 }
 
 /* Balance ===================== */
