@@ -193,7 +193,7 @@ const Form = {
     
     // let resultado = ((((description/1000)*(100-amount)/100)*120)/date)*3600
     let resultado = ((((description/1000)*(100-amount)/100)*120)/date)*3600
-    resultado = (resultado).toLocaleString('pt-BR')
+    resultado = (resultado).toFixed(2)
     return{
       description,
       amount,
