@@ -170,6 +170,8 @@ header div img{
   width: 100%;
   border-spacing: 0 0.5rem;
   color: #969cb3;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 table thead tr th:first-child,
