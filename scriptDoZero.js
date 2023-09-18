@@ -190,7 +190,7 @@ const Form = {
 
     amount = utils.formatAmount(amount)
 
-    date = utils.formatDate(date)
+    date = utils.formatAmount(date)
     console.log("Formatação dos dados")
 
     return{
