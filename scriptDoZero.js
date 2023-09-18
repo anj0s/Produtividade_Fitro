@@ -141,7 +141,6 @@ const utils = {
     value = String(value).replace(/\D/g, "")
 
     value = Number(value) / 100
-    })
 
     return value
   },
