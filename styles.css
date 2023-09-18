@@ -164,6 +164,7 @@ header div img{
   display: block;
   width: 80%;
   overflow-x: auto;
+  magin: auto;
 }
 #data-table {
   width: 100%;
