@@ -141,17 +141,13 @@ const utils = {
     value = String(value).replace(/\D/g, "")
 
     value = Number(value) / 100
-
-    value = value.toLocaleString("pt-BR",{
-      style:"currency",
-      currency:"BRL"
     })
 
-    return signal + value
+    return value
   },
 
   formatAmount(value){
-    value = Number(value) * 100
+    value = Number(value)
     return value
   },
 
@@ -187,7 +183,9 @@ const Form = {
   FormatValues(){
     // Formatação dos dados inseridos
     let {description, amount, date} = Form.getValues()
+    
     description = utils.formatAmount(description)
+    
     amount = utils.formatAmount(amount)
 
     date = utils.formatAmount(date)
