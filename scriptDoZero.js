@@ -187,16 +187,17 @@ const Form = {
   FormatValues(){
     // Formatação dos dados inseridos
     let {description, amount, date} = Form.getValues()
-
+    description = utils.formatAmount(description)
     amount = utils.formatAmount(amount)
 
     date = utils.formatAmount(date)
     console.log("Formatação dos dados")
-
+    let resultado = ((((description/1000)*(100-amount)/100)*120)/date)*3600)
     return{
       description,
       amount,
-      date
+      date,
+      resultado
     }
   },
 
