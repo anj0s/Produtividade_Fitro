@@ -195,7 +195,7 @@ const Form = {
       description,
       amount,
       date,
-      resultado
+      resultado.toFixed(2)
     }
   },
 
