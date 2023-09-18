@@ -190,12 +190,15 @@ const Form = {
 
     date = utils.formatAmount(date)
     console.log("Formatação dos dados")
+    
     let resultado = ((((description/1000)*(100-amount)/100)*120)/date)*3600
+    
+    resultado = (resultado).toLocaleString('pt-BR')
     return{
       description,
       amount,
       date,
-      resultado.toFixed(2)
+      resultado
     }
   },
 
