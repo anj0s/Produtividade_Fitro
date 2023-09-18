@@ -101,7 +101,7 @@ button:hover {
 /* Header ===================== */
 header {
   background: #004071;
-  padding: 2rem 0 5rem;
+  padding: 1rem 0 1rem;
   text-align: center;
 }
 
@@ -162,7 +162,7 @@ header div img{
 /* Table ===================== */
 #transaction {
   display: block;
-  width: 100%;
+  width: 80%;
   overflow-x: auto;
 }
 #data-table {
