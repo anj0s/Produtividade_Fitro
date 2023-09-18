@@ -81,7 +81,7 @@
       <div class="modal">
         <!-- Estilo form -->
         <div id="form">
-          <h2>Nova Transação</h2>
+          <h2>Novo Cálculo</h2>
           <form action="" onsubmit="Form.submit(event)">
             <div class="input-group">
               <!-- Entrada que descreve a transação -->
@@ -91,7 +91,7 @@
                 step="0.01"
                 id="description"
                 name="description"
-                placeholder="Descrição"
+                placeholder="Peso Úmido"
               />
             </div>
 
@@ -103,7 +103,7 @@
                 step="0.01"
                 id="amount"
                 name="amount"
-                placeholder="0,00"
+                placeholder="Umidade"
               />
               <small class="help"
                 >Use o sinal - (negativo) para despesas e , (vírgula) para casas
@@ -114,7 +114,7 @@
             <div class="input-group">
               <!-- Entrada que informa a data da transação -->
               <label class="sr-only" for="date">Data</label>
-              <input type="number" id="date" name="date" />
+              <input type="number" id="date" name="date" placeholder = "Ciclo"/>
             </div>
 
             <div class="input-group actions">
