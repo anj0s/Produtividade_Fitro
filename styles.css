@@ -51,7 +51,6 @@
   
   /* Links & Buttons ===================== */
   a {
-    margin-top: 0.5rem;
     color: var(--blue);
     text-decoration: none;
     opacity: 0.7;
@@ -83,6 +82,7 @@
   .button.new {
     display: inline-block;
     margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
   }
   
   .button.cancel {
@@ -196,7 +196,7 @@
     font-weight: normal;
     padding: 1rem 2rem;
   
-    text-align: left;
+    text-align: center;
   }
   
   table tbody tr {
@@ -210,6 +210,8 @@
   table tbody td {
     background: white;
     padding: 1rem 2rem;
+    text-align: center;
+
   }
   
   td.description {
@@ -294,6 +296,14 @@
     width: 48%;
   }
   
+  /* Linhas */
+  .Linhas{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+
+  }
+
   /* Footer ===================== */
   footer {
     text-align: center;
