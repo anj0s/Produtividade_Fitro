@@ -1,138 +1,119 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produtividade Filtro</title>
 
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div> Produtividade do Filtro</div>
-    </header>
-    
-<!--     <main class="container">
-      <!-- Seção que mostra um controle de Entradas, Saídas e o Total -->
-<!--       <section id="balance"> -->
-<!--         <h2 class="sr-only">Balanço</h2> -->
-        <!-- Cartão que fará o somatório das entradas -->
-<!--         <div class="card"> -->
-<!--           <h3> -->
-<!--             <span> Entradas </span> -->
-<!--             <img src="./assets/income.svg" alt="Image de entradas" /> -->
-<!--           </h3> -->
-<!--           <p id="incomeDisplay">R$ 0,00</p> -->
-<!--         </div> -->
+<html lang = "pt-br">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+        <title>Produtividade do Filtro</title>
 
-        <!-- Cartão que fará o somatório das saídas -->
-<!--         <div class="card"> -->
-<!--           <h3> -->
-<!--             <span> Saídas </span> -->
-<!--             <img src="./assets/expense.svg" alt="Image de saídas" /> -->
-<!--           </h3> -->
-<!--           <p id="expenseDisplay">R$ 0,00</p> -->
-<!--         </div> -->
+        <link rel="stylesheet" href="./styles.css" />
+        <link rel="preconnet" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-        <!-- Cartão que fará o somatório das entradas - saídas -->
-<!--         <div class="card total"> -->
-<!--           <h3> -->
-<!--             <span> Total </span> -->
-<!--             <img src="./assets/total.svg" alt="Image de total" /> -->
-<!--           </h3> -->
-<!--           <p id="totalDisplay">R$ 0,00</p> -->
-<!--         </div> -->
-<!--       </section> -->
-
-      <!-- Seção que mostra um controle cada transação particularmente -->
-      <section id="transaction">
-        <h2 class="sr-only">Transações</h2>
+    <body>
+        <header>
+            <div>Produtividade do Filtro</div>
+        </header>
         
-        <!-- Botão para abrir o menu de transações -->
-        <a href="#" onclick="Modal.open()" class="button new"
-          >+ Novo Cálculo</a
-        >
-        <!-- Tabela que agrupa todas as transações uma a uma -->
-        <table id="data-table">
-          <thead>
-            <tr>
-              <th>Peso Úmido</th>
-              <th>Umidade</th>
-              <th>Ciclo</th>
-              <th>Resultado</th>
-              <th></th>
-            </tr>
-          </thead>
+        <main class="container">
 
-          <!-- Este tbody é onde estarão sendo mostradas as transações linha por linha -->
-          <tbody>
-          </tbody>
-        </table>
-      </section>
-    </main>
+            <section id="transaction">
 
-    <!-- Menu de novas transações -->
-    <div class="modal-overlay">
-      <div class="modal">
-        <!-- Estilo form -->
-        <div id="form">
-          <h2>Novo Cálculo</h2>
-          <form action="" onsubmit="Form.submit(event)">
-            <div class="input-group">
-              <!-- Entrada que descreve a transação -->
-              <label class="sr-only" for="description">Descrição</label>
-              <input
-                type="number"
-                step="0.01"
-                id="description"
-                name="description"
-                placeholder="Peso Úmido"
-              />
+                <h2 class="sr-only">Produtividade</h2>
+                <a href="#" onclick="Modal.open()" class="button new">+ Novo Cálculo</a>
+
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Filtro</th>
+                            <th>Peso úmido</th>
+                            <th>Umidade</th>
+                            <th>Ciclo</th>
+                            <th>Resultado</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        
+        <div class="modal-overlay">
+
+            <div class = "modal">
+                <div id="form">
+                    <h2>Novo Cálculo</h2>
+
+                    <form action="" onsubmit="Form.submit(event)">
+                        <div class="input-group">
+                            <!-- Entrada que indica o filtro -->
+                            <label class="sr-only" for="description">Filtro</label>
+                            <input
+                              type="text"
+                              id="Filtro"
+                              name="Filtro"
+                              placeholder="Filtro"
+                            />
+                        </div>
+
+                        <div class="input-group">
+                            <!-- Entrada que indica o Peso úmido -->
+                            <label class="sr-only" for="description">Peso Úmido</label>
+                            <input
+                              type="number"
+                              step="0.01"
+                              id="Peso"
+                              name="Peso"
+                              placeholder="Peso Úmido"
+                            />
+                        </div>
+
+                        <div class="input-group">
+                            <!-- Entrada que indica a umidade do material -->
+                            <label class="sr-only" for="amount">Umidade</label>
+                            <input
+                              type="number"
+                              step="0.01"
+                              id="Umidade"
+                              name="Umidade"
+                              placeholder="Umidade"
+                            />
+                        </div>
+                        
+                        <div class="input-group">
+                            <!-- Entrada que indica o ciclo do material -->
+                            <label class="sr-only" for="amount">Ciclo</label>
+                            <input
+                              type="number"
+                              step="1"
+                              id="Ciclo"
+                              name="Ciclo"
+                              placeholder="Ciclo"
+                            />
+                        </div>
+
+                        <div class="input-group actions">
+                            <!-- Botão que CANCELA uma entrada de valores -->
+                            <a onclick="Modal.close()" href="#" class="button cancel"
+                              >Cancelar</a
+                            >
+                            <!-- Botão que SALVA e resulta o cálculo -->
+                            <button>Salvar</button>
+                        </div>
+
+                    </form>
+                </div>
             </div>
-
-            <div class="input-group">
-              <!-- Entrada que mostra o montante (Se é saída ou entrada) -->
-              <label class="sr-only" for="amount">Valor</label>
-              <input
-                type="number"
-                step="0.01"
-                id="amount"
-                name="amount"
-                placeholder="Umidade"
-              />
-<!--               <small class="help"
-                >Use o sinal - (negativo) para despesas e , (vírgula) para casas
-                decimais</small
-              > -->
-            </div>
-
-            <div class="input-group">
-              <!-- Entrada que informa a data da transação -->
-              <label class="sr-only" for="date">Data</label>
-              <input type="number" id="date" name="date" placeholder = "Ciclo"/>
-            </div>
-
-            <div class="input-group actions">
-              <!-- Botão que CANCELA uma transação -->
-              <a onclick="Modal.close()" href="#" class="button cancel"
-                >Cancelar</a
-              >
-              <!-- Botão que SALVA uma transação -->
-              <button>Salvar</button>
-            </div>
-          </form>
         </div>
-      </div>
-    </div>
 
-    <footer><p>Produtividade do Filtro</p></footer>
-    
-    <!-- Scripts -->
-    <script src="./scriptDoZero.js"></script>
-  </body>
+        <footer><p>Produtividade do Filtro</p></footer>
+        
+        <script src="./scriptDoZero.js"></script>
+    </body>
 </html>
