@@ -29,10 +29,6 @@
                 <table id="data-table">
                     <thead>
                         <tr>
-                            <th>Filtro</th>
-                            <th>Peso úmido</th>
-                            <th>Umidade</th>
-                            <th>Ciclo</th>
                             <th>Resultado</th>
                             <th></th>
                         </tr>
@@ -49,53 +45,115 @@
             <div class = "modal">
                 <div id="form">
                     <h2>Novo Cálculo</h2>
-
+                    
                     <form action="" onsubmit="Form.submit(event)">
-                        <div class="input-group">
                             <!-- Entrada que indica o filtro -->
-                            <label class="sr-only" for="description">Filtro</label>
-                            <input
-                              type="text"
-                              id="Filtro"
-                              name="Filtro"
-                              placeholder="Filtro"
-                            />
+                        <div class="Linhas">
+                            <div>Norte</div>
+                            <div>Sul</div>
+                        </div>
+                        <div class="Linhas"> 
+                            <div class="input-group">
+                                <!-- Entrada que indica o Peso úmido -->
+                                <label class="sr-only" for="description">Peso Úmido 1 Norte</label>
+                                <input
+                                  type="number"
+                                  step="0.01"
+                                  id="Peso1Norte"
+                                  name="Peso1Norte"
+                                  placeholder="Peso Úmido 1 Norte"
+                                />
+                            </div>
+                            
+                            <div class="input-group">
+                                <!-- Entrada que indica o Peso úmido -->
+                                <label class="sr-only" for="description">Peso Úmido 2 Norte</label>
+                                <input
+                                  type="number"
+                                  step="0.01"
+                                  id="Peso2Norte"
+                                  name="Peso2Norte"
+                                  placeholder="Peso Úmido 2 Norte"
+                                />
+                            </div>
                         </div>
 
-                        <div class="input-group">
-                            <!-- Entrada que indica o Peso úmido -->
-                            <label class="sr-only" for="description">Peso Úmido</label>
-                            <input
-                              type="number"
-                              step="0.01"
-                              id="Peso"
-                              name="Peso"
-                              placeholder="Peso Úmido"
-                            />
+                        <div class="Linhas"> 
+                            <div class="input-group">
+                                <!-- Entrada que indica o Peso úmido -->
+                                <label class="sr-only" for="description">Peso Úmido 1 Sul</label>
+                                <input
+                                type="number"
+                                step="0.01"
+                                id="Peso1Sul"
+                                name="Peso1Sul"
+                                placeholder="Peso Úmido 1 Sul"
+                                />
+                            </div>
+                            
+                            <div class="input-group">
+                                <!-- Entrada que indica o Peso úmido -->
+                                <label class="sr-only" for="description">Peso Úmido 2 Sul</label>
+                                <input
+                                type="number"
+                                step="0.01"
+                                id="Peso2Sul"
+                                name="Peso2Sul"
+                                placeholder="Peso Úmido 2 Sul"
+                                />
+                            </div>
+                        </div>
+                        <div class="Linhas">
+
+                            <div class="input-group">
+                                <!-- Entrada que indica a umidade do material -->
+                                <label class="sr-only" for="amount">Umidade Norte</label>
+                                <input
+                                type="number"
+                                step="0.01"
+                                id="UmidadeNorte"
+                                name="UmidadeNorte"
+                                placeholder="Umidade Norte"
+                                />
+                            </div>
+                            <div class="input-group">
+                                <!-- Entrada que indica a umidade do material -->
+                                <label class="sr-only" for="amount">Umidade Sul</label>
+                                <input
+                                type="number"
+                                step="0.01"
+                                id="UmidadeSul"
+                                name="UmidadeSul"
+                                placeholder="Umidade Sul"
+                                />
+                            </div>
+
                         </div>
 
-                        <div class="input-group">
-                            <!-- Entrada que indica a umidade do material -->
-                            <label class="sr-only" for="amount">Umidade</label>
-                            <input
-                              type="number"
-                              step="0.01"
-                              id="Umidade"
-                              name="Umidade"
-                              placeholder="Umidade"
-                            />
-                        </div>
-                        
-                        <div class="input-group">
-                            <!-- Entrada que indica o ciclo do material -->
-                            <label class="sr-only" for="amount">Ciclo</label>
-                            <input
-                              type="number"
-                              step="1"
-                              id="Ciclo"
-                              name="Ciclo"
-                              placeholder="Ciclo"
-                            />
+                        <div class="Linhas">
+                            <div class="input-group">
+                                <!-- Entrada que indica o ciclo do material -->
+                                <label class="sr-only" for="amount">Ciclo Norte</label>
+                                <input
+                                  type="number"
+                                  step="1"
+                                  id="CicloNorte"
+                                  name="CicloNorte"
+                                  placeholder="Ciclo Norte"
+                                />
+                            </div>
+
+                            <div class="input-group">
+                                <!-- Entrada que indica o ciclo do material -->
+                                <label class="sr-only" for="amount">Ciclo Sul</label>
+                                <input
+                                  type="number"
+                                  step="1"
+                                  id="CicloSul"
+                                  name="CicloSul"
+                                  placeholder="Ciclo Sul"
+                                />
+                            </div>
                         </div>
 
                         <div class="input-group actions">
