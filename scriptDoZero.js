@@ -103,16 +103,17 @@ const Modal = {
       const html = 
       // Recebe os valores (description, amount, date)
       `
-        <td class="description">${transaction.Filtro}</td>
-        <td class="description">${transaction.Peso}</td>
-        <td class="description">${transaction.Umidade}</td>
-        <td class="description">${transaction.Ciclo}</td>
         <td class="description">${transaction.resultado}</td>
         <td>
           <a href = "#" onclick = "Transaction.remove(${index})" alt="Remover Transação" >Remover</a>
         </td>
       `
-  
+      // `
+      //   <td class="description">${transaction.resultado}</td>
+      //   <td>
+      //     <a href = "#" onclick = "Transaction.remove(${index})" alt="Remover Transação" >Remover</a>
+      //   </td>
+      // `
       return html
     },
   
@@ -161,51 +162,68 @@ const Modal = {
   const Form = {
     // Manipulação do formulário de inserção
     // Declarando os inputs para a manipulação
-    Filtro: document.getElementById("Filtro"),
-    Peso: document.getElementById("Peso"),
-    Umidade: document.getElementById("Umidade"),
-    Ciclo: document.getElementById("Ciclo"),
+  
+    Peso1Norte: document.getElementById("Peso1Norte"),
+    Peso2Norte: document.getElementById("Peso2Norte"),
+    UmidadeNorte: document.getElementById("UmidadeNorte"),
+    CicloNorte: document.getElementById("CicloNorte"),
+    
+    Peso1Sul: document.getElementById("Peso1Sul"),
+    Peso2Sul: document.getElementById("Peso2Sul"),
+    UmidadeSul: document.getElementById("UmidadeSul"),
+    CicloSul: document.getElementById("CicloSul"),
   
     getValues(){
       return{
-        Filtro: Form.Filtro.value,
-        Peso: Form.Peso.value,
-        Umidade: Form.Umidade.value,
-        Ciclo: Form.Ciclo.value
+        Peso1Norte: Form.Peso1Norte.value,
+        Peso2Norte: Form.Peso2Norte.value,
+        UmidadeNorte: Form.UmidadeNorte.value,
+        CicloNorte: Form.CicloNorte.value,
+        Peso1Sul: Form.Peso1Sul.value,
+        Peso2Sul: Form.Peso2Sul.value,
+        UmidadeSul: Form.UmidadeSul.value,
+        CicloSul: Form.CicloSul.value
       }
     },
   
     validateFields(){
-      const {Filtro, Peso, Umidade, Ciclo} = Form.getValues()
+      
+      const {Peso1Norte, Peso2Norte, UmidadeNorte, CicloNorte, Peso1Sul, Peso2Sul, UmidadeSul, CicloSul} = Form.getValues()
       // Validação dos inputs
-      if(Filtro.trim() === "" || Peso.trim() === "" || Umidade.trim() === "" || Ciclo.trim() === ""){
+      if(
+        Peso1Norte.trim() === "" || Peso2Norte.trim() === "" || UmidadeNorte.trim() === "" || CicloNorte.trim() === "" || 
+        Peso1Sul.trim() === "" ||  Peso2Sul.trim() === "" || UmidadeSul.trim() === "" || CicloSul.trim() === ""
+      ){
         throw new Error("Por favor, preencha todos os campos") 
       }
     },
   
     FormatValues(){
       // Formatação dos dados inseridos
-      let {Filtro, Peso, Umidade, Ciclo} = Form.getValues()
+      let {Peso1Norte, Peso2Norte, UmidadeNorte, CicloNorte, Peso1Sul, Peso2Sul, UmidadeSul, CicloSul} = Form.getValues()
       
-      Filtro = utils.formatAmount(Filtro)
+      Peso1N = utils.formatAmount(Peso1Norte)
+      Peso2N = utils.formatAmount(Peso2Norte)
+      UmidadeN = utils.formatAmount(UmidadeNorte)
+      CicloN = utils.formatAmount(CicloNorte)
+
+      Peso1S = utils.formatAmount(Peso1Sul)
+      Peso2S = utils.formatAmount(Peso2Sul)
+      UmidadeS = utils.formatAmount(UmidadeSul)
+      CicloS = utils.formatAmount(CicloSul)
       
-      Peso = utils.formatAmount(Peso)
-      
-      Umidade = utils.formatAmount(Umidade)
-      
-      Ciclo = utils.formatAmount(Ciclo)
-  
-      console.log("Formatação dos dados")
-      
-      // let resultado = ((((description/1000)*(100-amount)/100)*120)/date)*3600
-      let resultado = ((((Peso/1000)*(100-Umidade)/100)*120)/Ciclo)*3600
+      let resultado = ((((Peso1N/1000)*(100-UmidadeN)/100)*120)/CicloN)*3600
       resultado = (resultado).toFixed(2)
-      console.log(resultado)
+  
       return{
-        Filtro, 
-        Peso, 
-        Umidade, 
-        Ciclo,
+        Peso1N,
+        Peso2N,
+        UmidadeN,
+        CicloN,
+        Peso1S,
+        Peso2S,
+        UmidadeS,
+        CicloS,
         resultado
       }
     },
@@ -215,10 +233,14 @@ const Modal = {
     },
   
     clearFields(){
-      Form.Filtro.value = ""
-      Form.Peso.value = ""
-      Form.Umidade.value = ""
-      Form.Ciclo.value = ""
+      Form.Peso1Norte.value = "",
+      Form.Peso2Norte.value = "",
+      Form.UmidadeNorte.value = "",
+      Form.CicloNorte.value = "",
+      Form.Peso1Sul.value = "",
+      Form.Peso2Sul.value = "",
+      Form.UmidadeSul.value = "",
+      Form.CicloSul.value = ""
     },
   
     submit(event){
