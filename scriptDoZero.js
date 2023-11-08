@@ -103,7 +103,7 @@ const Modal = {
       const html = 
       // Recebe os valores (description, amount, date)
       `
-        <td class="description">${transaction.resultado}</td>
+        <td class="description">${transaction.resultado} TMS</td>
         <td>
           <a href = "#" onclick = "Transaction.remove(${index})" alt="Remover Transação" >Remover</a>
         </td>
@@ -213,7 +213,16 @@ const Modal = {
       CicloS = utils.formatAmount(CicloSul)
       
       let resultado = ((((Peso1N/1000)*(100-UmidadeN)/100)*120)/CicloN)*3600
-      resultado = (resultado).toFixed(2)
+
+      let Resultado1N = (Peso1N/1000) * ((100-UmidadeN)/100) * (120/CicloN) * 3600
+      let Resultado2N = (Peso2N/1000) * ((100-UmidadeN)/100) * (120/CicloN) * 3600
+      
+      let Resultado1S = (Peso1S/1000) * ((100-UmidadeS)/100) * (120/CicloS) * 3600
+      let Resultado2S = (Peso2S/1000) * ((100-UmidadeS)/100) * (120/CicloS) * 3600
+
+      let Media = (Resultado1N + Resultado2N + Resultado1S + Resultado2S)/4
+
+      resultado = (Media).toFixed(2)
   
       return{
         Peso1N,
