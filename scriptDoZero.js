@@ -212,8 +212,6 @@ const Modal = {
       UmidadeS = utils.formatAmount(UmidadeSul)
       CicloS = utils.formatAmount(CicloSul)
       
-      let resultado = ((((Peso1N/1000)*(100-UmidadeN)/100)*120)/CicloN)*3600
-
       let Resultado1N = (Peso1N/1000) * ((100-UmidadeN)/100) * (120/CicloN) * 3600
       let Resultado2N = (Peso2N/1000) * ((100-UmidadeN)/100) * (120/CicloN) * 3600
       
@@ -221,7 +219,7 @@ const Modal = {
       let Resultado2S = (Peso2S/1000) * ((100-UmidadeS)/100) * (120/CicloS) * 3600
 
       let Media = (Resultado1N + Resultado2N + Resultado1S + Resultado2S)/4
-
+      
       resultado = (Media).toFixed(2)
   
       return{
